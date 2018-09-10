@@ -1,6 +1,9 @@
 version: 2
 jobs:
   build:
+    branches:
+      only:
+        - master
     docker: # use the docker executor type; machine and macos executors are also supported
       - image: circleci/node:8.11.3 # the primary container, where your job's commands are run
     steps:
@@ -9,3 +12,4 @@ jobs:
       - run: npm install # install node modules
       - run: npm run build
       - run: npm start
+        timeout: 1200
