@@ -1,16 +1,13 @@
 version: 2
 jobs:
   build:
-    filters:
-      branches:
-        only: master
-          docker:
-            - image: circleci/node:8.11.3 # the primary container, where your job's commands are run
-          steps:
-            - checkout # check out the code in the project directory
-            - run: echo "hello world" # run the `echo` command
-            - run: npm install # install node modules
-            - run: npm run build
-            - run: npm start
-                no_output_timout: 1m
+    docker:
+          - image: circleci/node:8.11.3 
+        steps:
+          - checkout # check out the code in the project directory
+          - run: echo "hello world" # run the `echo` command
+          - run: npm install # install node modules
+          - run: npm run build
+          - run: npm start
+              no_output_timout: 1m
        
