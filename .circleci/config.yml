@@ -9,5 +9,4 @@ jobs:
           - run: npm install # install node modules
           - run: npm run build
           - run: npm start
-              no_output_timout: 1m
        
