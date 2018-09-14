@@ -6,10 +6,7 @@ jobs:
       - image: circleci/node:8.11.3 # the primary container, where your job's commands are run
     steps:
       - checkout # check out the code in the project directory
-      - run: 
-          name: Hello
-          command: |
-            console.log("Hello")
+      - run: echo Hello
       - run: npm install
 #     steps:
 #       - checkout
