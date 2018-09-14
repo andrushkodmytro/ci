@@ -6,6 +6,5 @@ jobs:
     steps1:
       - checkout # check out the code in the project directory
       - run: echo "hello world" # run the `echo` command  
-    step2:
       - run: npm install
       
