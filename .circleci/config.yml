@@ -1,10 +1,10 @@
 version: 2
 jobs:
   build:
+    only:
+      - master
     docker:
-          - image: circleci/node:8.11.3 
-        steps:
-          - checkout # check out the code in the project directory
-          - run: echo "hello world" # run the `echo` command
-          
-       
+      - image: circleci/node:9.8.0-stretch-browsers 
+      steps:
+       - run:echo 'Hello World!'
+     
