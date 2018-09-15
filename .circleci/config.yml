@@ -17,7 +17,7 @@ jobs:
       - run:
           name: Deploy Master to Heroku
           command: |
-            git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME.git master
+            git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME.git qa
 workflows:
   version: 2
   deploys:
@@ -28,7 +28,7 @@ workflows:
             - build
           filters:
             branches:
-              only: master
+              only: qa
 
    
 #     steps:
