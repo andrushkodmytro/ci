@@ -24,6 +24,8 @@ workflows:
     jobs:
       - build
       - deploy_heroku:
+          requires:
+            - build
           filters:
             branches:
               only: master
