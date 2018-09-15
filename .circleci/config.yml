@@ -10,6 +10,7 @@ jobs:
       - run: echo Hello
       - run: npm install
       - run: npm run build
+      - run: cd build
    
 #     steps:
 #       - checkout
