@@ -10,7 +10,7 @@ jobs:
       - run: npm install
       - run: npm run build
   deploy_heroku:
-    docker: # use the docker executor type; machine and macos executors are also supported
+    docker: # use the docker executor type; machine and macos executors are also supporte
       - image: circleci/node:8.11.3  
     steps:
       - checkout
