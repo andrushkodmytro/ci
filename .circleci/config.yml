@@ -26,12 +26,12 @@ workflows:
   deploys:
     jobs:
       - build
-#       - deploy_heroku:
-#           requires:
-#             - build
-#           filters:
-#             branches:
-#               only: qa
+      - deploy_heroku:
+          requires:
+            - build
+          filters:
+            branches:
+              only: master
 
    
 #     steps:
