@@ -17,9 +17,12 @@ jobs:
       - run:
           name: Deploy Master to Heroku
           command: |
-            if [ "${CIRCLE_BRANCH}" == "master" ]; then
-            echo $CIRCLE_BRANCH
-#           git push heroku master
+            if [ "${CIRCLE_BRANCH}" == "master" ]
+            then
+              git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME.git master
+            elif [ "${CIRCLE_BRANCH}" == "qa" ]
+            then
+              git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$qa.git master
 #             git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME.git master
 workflows:
   version: 2
@@ -31,7 +34,9 @@ workflows:
             - build
           filters:
             branches:
-              only: master
+              only: 
+                - master
+                - qa
 
    
 #     steps:
